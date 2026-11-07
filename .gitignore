@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch & HuggingFace Checkpoints (Hosted on HuggingFace Hub: hussainshafiq/NoorGPT)
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# Large Datasets (Hosted on HuggingFace Hub: hussainshafiq/Pashto-SFT-Mixture)
+data/*.jsonl
+NoorGPT/data/
+*.parquet
+
+# Virtual Environments
+venv/
+env/
+.env
+*env/
+
+# System and IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs/*.log
