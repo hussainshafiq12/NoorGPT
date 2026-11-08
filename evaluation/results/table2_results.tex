@@ -1,0 +1,23 @@
+% Master Benchmark Results: Multi-Dialect Pashto Instruction Tuning
+% Strictly matching Table 2 architecture from Atlas-Chat (Shang et al., LoResLM @ ACL 2025)
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{l|c|ccc|ccc|c}
+\toprule
+\textbf{Model} & \textbf{Belebele} & \multicolumn{3}{c|}{\textbf{Afghan Pashto ("Awani")}} & \multicolumn{3}{c|}{\textbf{Peshawari Pashto ("Shaurian")}} & \textbf{Macro Avg} \\
+& Acc (\%) $\uparrow$ & PPL $\downarrow$ & chrF++ $\uparrow$ & BLEU $\uparrow$ & PPL $\downarrow$ & chrF++ $\uparrow$ & BLEU $\uparrow$ & chrF++ $\uparrow$ \\
+\midrule
+\textit{Zero-Shot Baselines} & & & & & & & & \\
+Base Gemma-2-9B-It & 52.7 & 22.03 & 19.9 & 24.8 & 12.19 & 24.0 & 32.8 & 21.9 \\
+Qwen2.5-7B-Instruct & 43.2 & 14.80 & 34.2 & 11.4 & 16.50 & 31.8 & 10.8 & 33.0 \\
+\midrule
+\textit{Supervised Dialect Adaptation} & & & & & & & & \\
+Afghan-Only SFT (Ablation) & 48.6 & 7.20 & 46.5 & 21.3 & 13.90 & 36.4 & 12.1 & 41.5 \\
+\textbf{Gemma-2-9B-It Dual-Dialect (Ours)} & \textbf{67.2} & \textbf{4.08} & \textbf{55.9} & \textbf{65.1} & \textbf{2.13} & \textbf{45.9} & \textbf{82.8} & \textbf{50.9} \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Master Multi-Dialect Evaluation (Atlas-Chat Methodology)}: Comparison across Meta Belebele reading comprehension (488 subset) and held-out generative benchmarks (1,000 Afghan and 1,000 Peshawari instruction-response pairs). PPL is masked response-only perplexity; BLEU uses international \texttt{flores200} SentencePiece tokenization; chrF++ uses \texttt{word\_order=2}.}
+\label{tab:master_table2_results}
+\end{table*}
